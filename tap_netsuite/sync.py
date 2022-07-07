@@ -118,7 +118,7 @@ def sync_records(ns, catalog_entry, state, counter):
         for rec in page:
             counter.increment()
             with Transformer(pre_hook=transform_data_hook(ns, stream)) as transformer:
-                rec = transformer.transform(serialize_object(rec), schema)
+                rec = transformer.transform(serialize_object(rec), schema, catalog_metadata)
 
             singer.write_message(
                 singer.RecordMessage(
