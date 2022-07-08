@@ -131,7 +131,7 @@ def sync_records(ns, catalog_entry, state, counter):
                     schema = schema.to_dict()
 
                 singer.write_record(
-                    catalog_entry['tap_stream_id'],
+                    (stream_alias or stream),
                     transformer.transform(
                         rec,
                         schema,
