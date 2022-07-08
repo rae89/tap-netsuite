@@ -113,41 +113,52 @@ def sync_records(ns, catalog_entry, state, counter):
             query_result = [query_result]
         else:
             query_result = []
+    with Transformer() as transformer:
+        for page in query_result:
+            for rec in page:
+                counter.increment()
+                # with Transformer(pre_hook=transform_data_hook(ns, stream)) as transformer:
+                #     rec = transformer.transform(serialize_object(rec), schema, catalog_metadata)
+                # singer.write_message(
+                #     singer.RecordMessage(
+                #         stream=(
+                #                 stream_alias or stream),
+                #         record=rec,
+                #         version=stream_version,
+                #         time_extracted=start_time))
 
-    for page in query_result:
-        for rec in page:
-            counter.increment()
-            with Transformer(pre_hook=transform_data_hook(ns, stream)) as transformer:
-                rec = transformer.transform(serialize_object(rec), schema, catalog_metadata)
+                if not isinstance(schema, dict):
+                    schema = schema.to_dict()
 
-            singer.write_message(
-                singer.RecordMessage(
-                    stream=(
-                            stream_alias or stream),
-                    record=rec,
-                    version=stream_version,
-                    time_extracted=start_time))
+                singer.write_record(
+                    catalog_entry['tap_stream_id'],
+                    transformer.transform(
+                        rec,
+                        schema,
+                        catalog_metadata
+                    )
+                )
 
-            if replication_key:
-                _rec = rec.get(replication_key, None)
-                original_replication_key_value = ""
-                replication_key_value = None
-                if replication_key and _rec is not None:
-                    original_replication_key_value = _rec
-                    replication_key_value = singer_utils.strptime_with_tz(original_replication_key_value)
+                if replication_key:
+                    _rec = rec.get(replication_key, None)
+                    original_replication_key_value = ""
+                    replication_key_value = None
+                    if replication_key and _rec is not None:
+                        original_replication_key_value = _rec
+                        replication_key_value = singer_utils.strptime_with_tz(original_replication_key_value)
 
-                if previous_max_replication_key is None or (
-                        replication_key_value and replication_key_value <= start_time and replication_key_value > previous_max_replication_key
-                ):
-                    state = singer.write_bookmark(
-                        state,
-                        catalog_entry['tap_stream_id'],
-                        replication_key,
-                        original_replication_key_value)
-                    previous_max_replication_key = replication_key_value
+                    if previous_max_replication_key is None or (
+                            replication_key_value and replication_key_value <= start_time and replication_key_value > previous_max_replication_key
+                    ):
+                        state = singer.write_bookmark(
+                            state,
+                            catalog_entry['tap_stream_id'],
+                            replication_key,
+                            original_replication_key_value)
+                        previous_max_replication_key = replication_key_value
 
 
-    if not replication_key:
-        singer.write_message(activate_version_message)
-        state = singer.write_bookmark(
-            state, catalog_entry['tap_stream_id'], 'version', None)
+        if not replication_key:
+            singer.write_message(activate_version_message)
+            state = singer.write_bookmark(
+                state, catalog_entry['tap_stream_id'], 'version', None)
