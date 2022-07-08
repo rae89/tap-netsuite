@@ -7,6 +7,6 @@ class ExtendedNetSuiteClient(NetSuiteClient):
         # self.set_search_preferences(page_size=100, return_search_columns=True)
         self._search_preferences = self.SearchPreferences(
             bodyFieldsOnly=False,
-            pageSize=900,
+            pageSize=100,
             returnSearchColumns=True
         )
