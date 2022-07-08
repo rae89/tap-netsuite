@@ -384,7 +384,7 @@
     {"displayName": "WeightUnits", "name": "weightUnits", "type": "string"}
   ],
   "SalesOrders": [
-    {"displayName": "Id", "name": "internalId", "type": "string"},
+    {"displayName": "internalId", "name": "internalId", "type": "string"},
     {"displayName": "AccountingBookDetailList", "name": "accountingBookDetailList", "type": "string"},
     {"displayName": "ActualShipDate", "name": "actualShipDate", "type": "datetime"},
     {"displayName": "AltHandlingCost", "name": "altHandlingCost", "type": "number"},
@@ -454,7 +454,7 @@
     {"displayName": "IsTaxable", "name": "isTaxable", "type": "boolean"},
     {"displayName": "ItemList", "name": "itemList", "type": "string"},
     {"displayName": "Job", "name": "job", "type": "string"},
-    {"displayName": "LastModifiedDate", "name": "lastModifiedDate", "type": "datetime"},
+    {"displayName": "lastModifiedDate", "name": "lastModifiedDate", "type": "datetime"},
     {"displayName": "LeadSource", "name": "leadSource", "type": "string"},
     {"displayName": "LinkedTrackingNumbers", "name": "linkedTrackingNumbers", "type": "string"},
     {"displayName": "Location", "name": "location", "type": "string"},
@@ -548,7 +548,7 @@
     {"displayName": "VsoeAutoCalc", "name": "vsoeAutoCalc", "type": "boolean"}
   ],
   "CreditMemos": [
-    {"displayName": "Id", "name": "internalId", "type": "string"},
+    {"displayName": "internalId", "name": "internalId", "type": "string"},
     {"displayName": "Account", "name": "account", "type": "string"},
     {"displayName": "AccountingBookDetailList", "name": "accountingBookDetailList", "type": "string"},
     {"displayName": "AltHandlingCost", "name": "altHandlingCost", "type": "string"},
@@ -595,7 +595,7 @@
     {"displayName": "IsTaxable", "name": "isTaxable", "type": "string"},
     {"displayName": "ItemList", "name": "itemList", "type": "string"},
     {"displayName": "Job", "name": "job", "type": "string"},
-    {"displayName": "LastModifiedDate", "name": "lastModifiedDate", "type": "datetime"},
+    {"displayName": "lastModifiedDate", "name": "lastModifiedDate", "type": "datetime"},
     {"displayName": "LeadSource", "name": "leadSource", "type": "string"},
     {"displayName": "Location", "name": "location", "type": "string"},
     {"displayName": "Memo", "name": "memo", "type": "string"},
@@ -784,7 +784,7 @@
     {"displayName": "WeightUnit", "name": "weightUnit", "type": "string"}
   ],
   "PurchaseOrder": [
-    {"displayName": "Id", "name": "internalId", "type": "string"},
+    {"displayName": "internalId", "name": "internalId", "type": "string"},
     {"displayName": "AccountingBookDetailList", "name": "accountingBookDetailList", "type": "string"},
     {"displayName": "ApprovalStatus", "name": "approvalStatus", "type": "string"},
     {"displayName": "AvailableVendorCredit", "name": "availableVendorCredit", "type": "number"},
@@ -812,7 +812,7 @@
     {"displayName": "IntercoStatus", "name": "intercoStatus", "type": "string"},
     {"displayName": "IntercoTransaction", "name": "intercoTransaction", "type": "string"},
     {"displayName": "ItemList", "name": "itemList", "type": "string"},
-    {"displayName": "LastModifiedDate", "name": "lastModifiedDate", "type": "datetime"},
+    {"displayName": "lastModifiedDate", "name": "lastModifiedDate", "type": "datetime"},
     {"displayName": "LinkedTrackingNumbers", "name": "linkedTrackingNumbers", "type": "string"},
     {"displayName": "Location", "name": "location", "type": "string"},
     {"displayName": "Memo", "name": "memo", "type": "string"},
