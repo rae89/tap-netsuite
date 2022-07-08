@@ -113,7 +113,7 @@ def sync_records(ns, catalog_entry, state, counter):
             query_result = [query_result]
         else:
             query_result = []
-    with Transformer() as transformer:
+    with Transformer(pre_hook=transform_data_hook(ns, stream)) as transformer:
         for page in query_result:
             for rec in page:
                 counter.increment()
@@ -131,7 +131,7 @@ def sync_records(ns, catalog_entry, state, counter):
                     schema = schema.to_dict()
 
                 singer.write_record(
-                    (stream_alias or stream),
+                    catalog_entry['tap_stream_id'],
                     transformer.transform(
                         rec,
                         schema,
