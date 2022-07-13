@@ -1,31 +1,34 @@
 {
-  "AccountingBook": [
-    { "displayName": "customform", "name": "customform", "type": "string" },
-    { "displayName": "externalid", "name": "externalid", "type": "string" },
+  "CurrencyRate": [
     {
-      "displayName": "name",
-      "name": "name",
+      "displayName": "baseCurrency",
+      "name": "baseCurrency",
       "type": "string"
     },
     {
-      "displayName": "status",
-      "name": "status",
+      "displayName": "currencyRateType",
+      "name": "currencyRateType",
       "type": "string"
     },
     {
-      "displayName": "subsidiary",
-      "name": "subsidiary",
-      "type": "string"
+      "displayName": "effectiveDate",
+      "name": "effectiveDate",
+      "type": "datetime"
     },
-    {
-      "displayName": "accountingBookCurrenciesList",
-      "name": "accountingBookCurrenciesList",
-      "type": "string"
-    }
+    { "displayName": "exchangeRate", "name": "exchangeRate", "type": "double" },
+    { "displayName": "transactionCurrency", "name": "transactionCurrency", "type": "string" }
   ],
   "Currency": [
-    { "displayName": "currencyformatsample", "name": "currencyformatsample", "type": "string" },
-    { "displayName": "currencyprecision", "name": "currencyprecision", "type": "string" },
+    {
+      "displayName": "currencyformatsample",
+      "name": "currencyformatsample",
+      "type": "string"
+    },
+    {
+      "displayName": "currencyprecision",
+      "name": "currencyprecision",
+      "type": "string"
+    },
     {
       "displayName": "displaysymbol",
       "name": "displaysymbol",
@@ -35,7 +38,11 @@
     { "displayName": "externalid", "name": "externalid", "type": "string" },
     { "displayName": "name", "name": "name", "type": "string" },
     { "displayName": "symbol", "name": "symbol", "type": "string" },
-    { "displayName": "symbolplacement", "name": "symbolplacement", "type": "string" },
+    {
+      "displayName": "symbolplacement",
+      "name": "symbolplacement",
+      "type": "string"
+    },
     {
       "displayName": "formuladate",
       "name": "formuladate",
