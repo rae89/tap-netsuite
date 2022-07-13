@@ -129,7 +129,7 @@ class AccountingBook(ApiBase):
         return self.get_all_generator(last_modified_date=last_modified_date)
 
     def get_all_generator(self, page_size=200, last_modified_date=None):
-        record_type_search_field = self.ns_client.SearchStringField(searchValue='SalesOrder', operator='contains')
+        record_type_search_field = self.ns_client.SearchStringField(searchValue='accountingBook', operator='contains')
         basic_search = self.ns_client.basic_search_factory('Transaction',
                                                            lastModifiedDate=last_modified_date,
                                                            recordType=record_type_search_field)
