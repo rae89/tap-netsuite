@@ -15,7 +15,7 @@
       "name": "effectiveDate",
       "type": "datetime"
     },
-    { "displayName": "exchangeRate", "name": "exchangeRate", "type": "double" },
+    { "displayName": "exchangeRate", "name": "exchangeRate", "type": "number" },
     { "displayName": "transactionCurrency", "name": "transactionCurrency", "type": "string" }
   ],
   "Currency": [
