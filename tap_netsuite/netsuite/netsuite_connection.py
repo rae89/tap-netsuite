@@ -69,6 +69,7 @@ class ExtendedNetSuiteConnection:
             'PriceLevel': PriceLevel(ns_client),
             'InventoryItem': InventoryItem(ns_client),
             'SalesOrders': SalesOrders(ns_client),
+            'AccountingBook': AccountingBook(ns_client),
             'CreditMemos': CreditMemos(ns_client),
             'Items': Items(ns_client),
             'PurchaseOrder': PurchaseOrder(ns_client)
