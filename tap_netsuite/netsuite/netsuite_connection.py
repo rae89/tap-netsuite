@@ -71,6 +71,7 @@ class ExtendedNetSuiteConnection:
             'SalesOrders': SalesOrders(ns_client),
             'Currency': Currency(ns_client),
             'CurrencyRate': CurrencyRate(ns_client),
+            'ConsolidatedExchangeRate': ConsolidatedExchangeRate(ns_client),
             'CreditMemos': CreditMemos(ns_client),
             'Items': Items(ns_client),
             'PurchaseOrder': PurchaseOrder(ns_client)

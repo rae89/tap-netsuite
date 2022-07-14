@@ -1,4 +1,57 @@
 {
+  "ConsolidatedExchangeRate": [
+    {
+      "displayName": "accountingBook",
+      "name": "accountingBook",
+      "type": "string"
+    },
+    {
+      "displayName": "averageRate",
+      "name": "averageRate",
+      "type": "number"
+    },
+    {
+      "displayName": "currentRate",
+      "name": "currentRate",
+      "type": "number"
+    },
+    { "displayName": "fromCurrency", "name": "fromCurrency", "type": "number" },
+    {
+      "displayName": "fromSubsidiary",
+      "name": "fromSubsidiary",
+      "type": "string"
+    },
+    {
+      "displayName": "historicalRate",
+      "name": "historicalRate",
+      "type": "number"
+    },
+    {
+      "displayName": "isDerived",
+      "name": "isDerived",
+      "type": "boolean"
+    },
+    {
+      "displayName": "isEliminationSubsidiary",
+      "name": "isEliminationSubsidiary",
+      "type": "boolean"
+    },
+    {
+      "displayName": "isPeriodClosed",
+      "name": "isPeriodClosed",
+      "type": "boolean"
+    },
+    {
+      "displayName": "toCurrency",
+      "name": "toCurrency",
+      "type": "boolean"
+    },
+    {
+      "displayName": "toSubsidiary",
+      "name": "toSubsidiary",
+      "type": "boolean"
+    }
+  ],
   "CurrencyRate": [
     {
       "displayName": "baseCurrency",
@@ -16,7 +69,11 @@
       "type": "datetime"
     },
     { "displayName": "exchangeRate", "name": "exchangeRate", "type": "number" },
-    { "displayName": "transactionCurrency", "name": "transactionCurrency", "type": "string" }
+    {
+      "displayName": "transactionCurrency",
+      "name": "transactionCurrency",
+      "type": "string"
+    }
   ],
   "Currency": [
     {
