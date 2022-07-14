@@ -18,7 +18,7 @@ from netsuitesdk.api.price_level import PriceLevel
 import time
 import json
 import singer
-from .transaction_entities import Customers, PurchaseOrder, Invoice, JournalEntries, InventoryTransfer, InventoryAdjustment, InventoryItem, VendorBills, VendorPayments, SalesOrders, CreditMemos, Items, Currency, CurrencyRate
+from .transaction_entities import Customers, PurchaseOrder, Invoice, JournalEntries, InventoryTransfer, InventoryAdjustment, InventoryItem, VendorBills, VendorPayments, SalesOrders, CreditMemos, Items, Currency, CurrencyRate, ConsolidatedExchangeRate
 from .netsuite_client import ExtendedNetSuiteClient
 
 LOGGER = singer.get_logger()
