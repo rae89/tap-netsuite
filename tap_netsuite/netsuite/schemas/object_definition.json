@@ -135,7 +135,7 @@
     {
       "displayName": "overrideCurrencyFormat",
       "name": "overrideCurrencyFormat",
-      "type": "boolean"
+      "type": "string"
     },
     {
       "displayName": "isInactive",
