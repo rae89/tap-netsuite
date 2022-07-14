@@ -73,7 +73,8 @@ class ExtendedNetSuiteConnection:
             'ConsolidatedExchangeRate': ConsolidatedExchangeRate(ns_client),
             'CreditMemos': CreditMemos(ns_client),
             'Items': Items(ns_client),
-            'PurchaseOrder': PurchaseOrder(ns_client)
+            'PurchaseOrder': PurchaseOrder(ns_client),
+            'Currency': self.currencies
         }
 
     def _query_entity(self, data, entity, stream):
