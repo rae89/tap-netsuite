@@ -84,21 +84,41 @@
   ],
   "Currency": [
     {
-      "displayName": "currencyformatsample",
-      "name": "currencyformatsample",
+      "displayName": "formatSample",
+      "name": "formatSample",
       "type": "string"
     },
     {
-      "displayName": "currencyprecision",
-      "name": "currencyprecision",
+      "displayName": "locale",
+      "name": "locale",
       "type": "string"
     },
     {
-      "displayName": "displaysymbol",
-      "name": "displaysymbol",
-      "type": "datetime"
+      "displayName": "currencyPrecision",
+      "name": "currencyPrecision",
+      "type": "string"
     },
-    { "displayName": "exchangerate", "name": "exchangerate", "type": "number" },
+    {
+      "displayName": "displaySymbol",
+      "name": "displaySymbol",
+      "type": "string"
+    },
+    {
+      "displayName": "fxRateUpdateTimezone",
+      "name": "fxRateUpdateTimezone",
+      "type": "string"
+    },
+    {
+      "displayName": "inclInFxRateUpdates",
+      "name": "inclInFxRateUpdates",
+      "type": "string"
+    },
+    {
+      "displayName": "isBaseCurrency",
+      "name": "isBaseCurrency",
+      "type": "boolean"
+    },
+    { "displayName": "exchangeRate", "name": "exchangeRate", "type": "number" },
     { "displayName": "externalid", "name": "externalid", "type": "string" },
     { "displayName": "name", "name": "name", "type": "string" },
     { "displayName": "symbol", "name": "symbol", "type": "string" },
@@ -111,6 +131,16 @@
       "displayName": "internalId",
       "name": "internalId",
       "type": "string"
+    },
+    {
+      "displayName": "overrideCurrencyFormat",
+      "name": "overrideCurrencyFormat",
+      "type": "boolean"
+    },
+    {
+      "displayName": "isInactive",
+      "name": "isInactive",
+      "type": "boolean"
     }
   ],
   "Customer": [
