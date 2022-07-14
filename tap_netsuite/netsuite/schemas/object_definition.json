@@ -16,6 +16,11 @@
       "name": "currentRate",
       "type": "number"
     },
+    {
+      "displayName": "postingPeriod",
+      "name": "postingPeriod",
+      "type": "string"
+    },
     { "displayName": "fromCurrency", "name": "fromCurrency", "type": "number" },
     {
       "displayName": "fromSubsidiary",
