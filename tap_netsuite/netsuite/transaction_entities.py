@@ -146,7 +146,7 @@ class CurrencyRate(ApiBase):
         self.require_effectiveDate_date = True
 
     def get_all(self, effective_date=None):
-        return self.get_all_generator(effectiveDate=effective_date)
+        return self.get_all_generator(effective_date=effective_date)
 
     def get_all_generator(self, page_size=200, effective_date=None):
         record_type_search_field = self.ns_client.SearchStringField(searchValue='CurrencyRate', operator='contains')
