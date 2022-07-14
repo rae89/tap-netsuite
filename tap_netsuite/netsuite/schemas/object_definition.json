@@ -98,7 +98,7 @@
       "name": "displaysymbol",
       "type": "datetime"
     },
-    { "displayName": "exchangerate", "name": "exchangerate", "type": "string" },
+    { "displayName": "exchangerate", "name": "exchangerate", "type": "number" },
     { "displayName": "externalid", "name": "externalid", "type": "string" },
     { "displayName": "name", "name": "name", "type": "string" },
     { "displayName": "symbol", "name": "symbol", "type": "string" },
@@ -108,9 +108,9 @@
       "type": "string"
     },
     {
-      "displayName": "formuladate",
-      "name": "formuladate",
-      "type": "datetime"
+      "displayName": "internalId",
+      "name": "internalId",
+      "type": "string"
     }
   ],
   "Customer": [
