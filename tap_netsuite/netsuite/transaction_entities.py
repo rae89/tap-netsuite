@@ -143,19 +143,19 @@ class Currency(ApiBase):
 class CurrencyRate(ApiBase):
     def __init__(self, ns_client):
         ApiBase.__init__(self, ns_client=ns_client, type_name='currencyRate')
-        self.require_lastModified_date = True
+        self.require_effectiveDate_date = True
 
-    def get_all(self, last_modified_date=None):
-        return self.get_all_generator(last_modified_date=last_modified_date)
+    def get_all(self, effective_date=None):
+        return self.get_all_generator(effectiveDate=effective_date)
 
-    def get_all_generator(self, page_size=200, last_modified_date=None):
+    def get_all_generator(self, page_size=200, effective_date=None):
         record_type_search_field = self.ns_client.SearchStringField(searchValue='CurrencyRate', operator='contains')
-        basic_search = self.ns_client.basic_search_factory('Transaction',
-                                                           lastModifiedDate=last_modified_date,
+        basic_search = self.ns_client.basic_search_factory('CurrencyRate',
+                                                           effectiveDate=effective_date,
                                                            recordType=record_type_search_field)
         paginated_search = PaginatedSearch(client=self.ns_client,
                                            basic_search=basic_search,
-                                           type_name='Transaction',
+                                           type_name='CurrencyRate',
                                            pageSize=page_size)
         
         return self._paginated_search_to_generator(paginated_search=paginated_search)
