@@ -1,5 +1,6 @@
 {
   "ConsolidatedExchangeRate": [
+    { "displayName": "internalId", "name": "internalId", "type": "string" },
     {
       "displayName": "accountingBook",
       "name": "accountingBook",
@@ -53,6 +54,7 @@
     }
   ],
   "CurrencyRate": [
+    { "displayName": "internalId", "name": "internalId", "type": "string" },
     {
       "displayName": "baseCurrency",
       "name": "baseCurrency",
