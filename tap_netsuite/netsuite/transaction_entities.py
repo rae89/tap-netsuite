@@ -140,7 +140,7 @@ class CurrencyRate(ApiBase):
     def post(self, data) -> OrderedDict:
         return None
 
-class CurrencyRate(ApiBase):
+class ConsolidatedExchangeRate(ApiBase):
     def __init__(self, ns_client):
         ApiBase.__init__(self, ns_client=ns_client, type_name='consolidatedExchangeRate')
         self.require_effectiveDate_date = True
