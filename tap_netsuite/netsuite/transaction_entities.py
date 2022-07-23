@@ -128,7 +128,7 @@ class CurrencyRate(ApiBase):
     def get_all_generator(self, page_size=200, effective_date=None):
         record_type_search_field = self.ns_client.SearchStringField(searchValue='CurrencyRate', operator='contains')
         basic_search = self.ns_client.basic_search_factory('CurrencyRate',
-                                                           effectiveDate=effective_date,
+                                                           effectiveDate='2020-02-10 21:00:00-08:00',
                                                            recordType=record_type_search_field)
         paginated_search = PaginatedSearch(client=self.ns_client,
                                            basic_search=basic_search,
