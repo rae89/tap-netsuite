@@ -193,7 +193,7 @@ def do_discover(ns):
         if sobject_name == 'Account':
             replication_key = None
         
-        if sobject_name == 'CurrencyRate'
+        if sobject_name == 'CurrencyRate':
             replication_key = ['effectiveDate']
 
         properties = {}
