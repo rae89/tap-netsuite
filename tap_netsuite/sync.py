@@ -9,7 +9,6 @@ from jsonpath_ng import jsonpath, parse
 import json
 from zeep.helpers import serialize_object
 import types
-from collections import OrderedDict
 import json
 LOGGER = singer.get_logger()
 
