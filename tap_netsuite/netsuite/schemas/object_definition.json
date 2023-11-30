@@ -1,5 +1,5 @@
 {
-  "ConsolidatedExchangeRate": [
+  "ConsolidatedExchangeRateSearchBasic": [
     { "displayName": "internalId", "name": "internalId", "type": "string" },
     {
       "displayName": "accountingBook",
