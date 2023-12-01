@@ -31,8 +31,7 @@ from .transaction_entities import (
     SalesOrders,
     CreditMemos,
     Items,
-    CurrencyRate,
-    ConsolidatedExchangeRateSearchBasic,
+    CurrencyRate
 )
 from .netsuite_client import ExtendedNetSuiteClient
 
@@ -93,9 +92,6 @@ class ExtendedNetSuiteConnection:
             "InventoryItem": InventoryItem(ns_client),
             "SalesOrders": SalesOrders(ns_client),
             "CurrencyRate": CurrencyRate(ns_client),
-            "ConsolidatedExchangeRateSearchBasic": ConsolidatedExchangeRateSearchBasic(
-                ns_client
-            ),
             "CreditMemos": CreditMemos(ns_client),
             "Items": Items(ns_client),
             "PurchaseOrder": PurchaseOrder(ns_client),
