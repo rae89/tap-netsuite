@@ -76,9 +76,9 @@ def build_state(raw_state, catalog):
 
         if replication_method == 'INCREMENTAL':
             replication_key = catalog_metadata.get((), {}).get('replication-key')
-            replication_key_value = str(singer.get_bookmark(raw_state,
+            replication_key_value = singer.get_bookmark(raw_state,
                                                         tap_stream_id,
-                                                        replication_key))
+                                                        replication_key)
             if version is not None:
                 state = singer.write_bookmark(
                     state, tap_stream_id, 'version', version)
