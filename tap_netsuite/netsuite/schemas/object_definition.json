@@ -9,7 +9,7 @@
     {
       "displayName": "effectiveDate",
       "name": "effectiveDate",
-      "type": "datetime"
+      "type": "string"
     },
     { "displayName": "exchangeRate", "name": "exchangeRate", "type": "number" },
     {
