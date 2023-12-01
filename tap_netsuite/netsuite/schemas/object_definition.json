@@ -7,6 +7,11 @@
       "type": "string"
     },
     {
+      "displayName": "currencyRateType",
+      "name": "currencyRateType",
+      "type": "string"
+    },
+    {
       "displayName": "effectiveDate",
       "name": "effectiveDate",
       "type": "datetime"
