@@ -102,7 +102,7 @@ def sync_stream(ns, catalog_entry, state):
 
 def sync_records(ns, catalog_entry, state, counter):
     chunked_bookmark = singer_utils.strptime_with_tz(
-        str(ns.get_start_date(state, catalog_entry))
+        ns.get_start_date(state, catalog_entry)
     )
     stream = catalog_entry["stream"]
     schema = catalog_entry["schema"]
@@ -152,7 +152,7 @@ def sync_records(ns, catalog_entry, state, counter):
                 if replication_key and _rec is not None:
                     original_replication_key_value = _rec
                     replication_key_value = singer_utils.strptime_with_tz(
-                        str(original_replication_key_value)
+                        original_replication_key_value
                     )
 
                 if previous_max_replication_key is None or (
