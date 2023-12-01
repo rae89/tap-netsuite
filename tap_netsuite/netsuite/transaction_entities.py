@@ -158,7 +158,7 @@ class CurrencyRate(ApiBase):
         record_type_search_field = self.ns_client.SearchStringField(
             searchValue="CurrencyRate", operator="contains"
         )
-        basic_search = self.ns_client.basic_search_factory(
+        basic_search = self.ns_client.search_factory(
             "CurrencyRate",
             effectiveDate=effective_date,
             recordType=record_type_search_field,
