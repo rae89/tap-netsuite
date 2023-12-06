@@ -14,22 +14,24 @@ from netsuitesdk.api.expense_categories import ExpenseCategory
 from netsuitesdk.api.custom_lists import CustomLists
 from netsuitesdk.api.custom_records import CustomRecords
 from netsuitesdk.api.price_level import PriceLevel
+from netsuitesdk.api.tax_items import TaxItems
+from netsuitesdk.api.projects import Projects
 
 import time
 import json
 import singer
-from .transaction_entities import Customers, PurchaseOrder, Invoice, JournalEntries, InventoryTransfer, InventoryAdjustment, InventoryItem, VendorBills, VendorPayments, SalesOrders, CreditMemos, Items, CurrencyRate, ConsolidatedExchangeRate
+from .transaction_entities import Customers, PurchaseOrder, Invoice, JournalEntries, InventoryTransfer, InventoryAdjustment, InventoryItem, VendorBills, VendorPayments, SalesOrders, CreditMemos, Items, InboundShipment, BankAccounts, Locations, CurrencyRate, ConsolidatedExchangeRate
 from .netsuite_client import ExtendedNetSuiteClient
 
 LOGGER = singer.get_logger()
 
 
 class ExtendedNetSuiteConnection:
-    def __init__(self, account, consumer_key, consumer_secret, token_key, token_secret, caching=True):
+    def __init__(self, account, consumer_key, consumer_secret, token_key, token_secret, fetch_child=True, caching=True):
         # NetSuiteConnection.__init__(self, account, consumer_key, consumer_secret, token_key, token_secret)
         # ns_client: NetSuiteClient = self.client
 
-        ns_client = ExtendedNetSuiteClient(account=account, caching=caching)
+        ns_client = ExtendedNetSuiteClient(account=account, fetch_child=fetch_child, caching=caching)
         ns_client.connect_tba(
             consumer_key=consumer_key,
             consumer_secret=consumer_secret,
@@ -58,7 +60,7 @@ class ExtendedNetSuiteConnection:
             'Customer': Customers(ns_client),
             'Invoice': Invoice(ns_client),
             'Accounts': Accounts(ns_client),
-            'JournalEntry': JournalEntries(ns_client),
+            'JournalEntries': JournalEntries(ns_client),
             'Commission': JournalEntries(ns_client),
             'Classifications': Classifications(ns_client),
             'Vendors': self.vendors,
@@ -74,7 +76,13 @@ class ExtendedNetSuiteConnection:
             'CreditMemos': CreditMemos(ns_client),
             'Items': Items(ns_client),
             'PurchaseOrder': PurchaseOrder(ns_client),
-            'Currency': self.currencies
+            'Currency': self.currencies,
+            "Subsidiaries": self.subsidiaries,
+            "TaxItems": TaxItems(ns_client),
+            "InboundShipment": InboundShipment(ns_client),
+            "Projects": Projects(ns_client),
+            "BankAccounts": BankAccounts(ns_client),
+            "Locations": Locations(ns_client),
         }
 
     def _query_entity(self, data, entity, stream):
