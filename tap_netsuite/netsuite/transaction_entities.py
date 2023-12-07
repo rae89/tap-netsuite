@@ -191,6 +191,7 @@ class CurrencyRate(ApiBase):
                                                            recordType=record_type_search_field)
         paginated_search = PaginatedSearch(client=self.ns_client,
                                            basic_search=basic_search,
+                                           search_record=basic_search,
                                            type_name='CurrencyRate',
                                            pageSize=page_size)
         
