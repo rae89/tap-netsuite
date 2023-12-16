@@ -179,7 +179,7 @@ class SalesOrders(ApiBase):
 class CurrencyRate(ApiBase):
     def __init__(self, ns_client):
         ApiBase.__init__(self, ns_client=ns_client, type_name='currencyRate')
-        self.require_lastModified_date = True
+        self.require_lastModified_date = False
 
     def get_all(self, effective_date=None):
         return self.get_all_generator(effective_date=effective_date)
@@ -203,7 +203,7 @@ class CurrencyRate(ApiBase):
 class ConsolidatedExchangeRate(ApiBase):
     def __init__(self, ns_client):
         ApiBase.__init__(self, ns_client=ns_client, type_name='consolidatedExchangeRate')
-        self.require_postingPeriod = True
+        self.require_lastModified_date = False
 
     def get_all(self, posting_period=None):
         return self.get_all_generator(posting_period=posting_period)
